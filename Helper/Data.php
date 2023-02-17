@@ -17,8 +17,8 @@ class Data extends AbstractHelper
      */
     const BLOCKED_DOMAINS_ENABLED = 'giantgiant_advanced_email_validation/dns_domain/enable';
     const BLOCKED_DOMAINS = 'giantgiant_advanced_email_validation/dns_domain/domains_to_block';
-    const CUSTOMER_REGISTRATION_DNS_CHECK_ENABLED = 'giantgiant_advanced_email_validation/dns_customer/enable';
-    const GUEST_API_DNS_CHECK_ENABLED = 'giantgiant_advanced_email_validation/dns_customer/enable';
+    const CUSTOMER_REGISTRATION_VALIDATION_ENABLED = 'giantgiant_advanced_email_validation/validate_customer/enable';
+    const GUEST_API_VALIDATION_ENABLED = 'giantgiant_advanced_email_validation/validate_guest_api/enable';
 
     public function __construct(
         Context $context,
@@ -37,14 +37,25 @@ class Data extends AbstractHelper
     }
 
     /**
-     * Check to see if the DNS check is enabled on a specific store
+     * Check to see if registration validation is enabled on a specific store
      *
      * @param null $storeId
      * @return bool
      */
     public function getRegistrationCheck($storeId = null): bool
     {
-        return $this->scopeConfig->isSetFlag(self::CUSTOMER_REGISTRATION_DNS_CHECK_ENABLED, \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $storeId);
+        return $this->scopeConfig->isSetFlag(self::CUSTOMER_REGISTRATION_VALIDATION_ENABLED, \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $storeId);
+    }
+    
+    /**
+     * Check to see if validation is enabled for the Guest API on a specific store
+     *
+     * @param null $storeId
+     * @return bool
+     */
+    public function getGuestApiIsEnabled($storeId = null): bool
+    {
+        return $this->scopeConfig->isSetFlag(self::GUEST_API_VALIDATION_ENABLED, \Magento\Store\Model\ScopeInterface::SCOPE_STORE, $storeId);
     }
 
     /**

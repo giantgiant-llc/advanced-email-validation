@@ -54,10 +54,6 @@ class ValidateCustomerEmail
             return [$customer, $passwordHash];
         }
 
-        $customerSessionId = $this->userContext->getUserType() === $this->userContext::USER_TYPE_CUSTOMER ?
-            (int)$this->userContext->getUserId() : 0;
-
-        $customerId = (int) $this->request->getParam('customerId');
         $email = $this->request->getParam('email');
         if (
             $email &&

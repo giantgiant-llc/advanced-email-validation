@@ -49,6 +49,10 @@ class ValidateGuestEmailViaApi
         \Magento\Quote\Api\Data\AddressInterface $billingAddress = null
     )
     {
+    	if (!$this->validationHelper->getRegistrationCheck()) {
+            return;
+        }
+        
         if (!$this->validationHelper->validateEmail($email)) {
             throw new Exception(
                 __('Unable to place order. Invalid Email Address.')
