@@ -58,11 +58,10 @@ class ValidateCustomerEmail
             (int)$this->userContext->getUserId() : 0;
 
         $customerId = (int) $this->request->getParam('customerId');
-        $bodyParams = $this->request->getBodyParams();
-
+        $email = $this->request->getParam('email');
         if (
-            isset($bodyParams['customer']['email']) &&
-            $this->validationHelper->validateEmail($bodyParams['customer']['email'])
+            $email &&
+            $this->validationHelper->validateEmail($email)
         ) {
             return [$customer, $passwordHash];
         }

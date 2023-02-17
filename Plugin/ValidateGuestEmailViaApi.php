@@ -26,7 +26,7 @@ class ValidateGuestEmailViaApi
         Data $validationHelper
     )
     {
-        $this->validationHelper = $securityHelper;
+        $this->validationHelper = $validationHelper;
     }
 
 
