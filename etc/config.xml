@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <giantgiant_advanced_email_validation>
+            <dns_domain>
+                <enable>1</enable>
+                <domains_to_block>example.com,test.com</domains_to_block>
+            </dns_domain>
+            <dns_customer>
+                <enable>1</enable>
+            </dns_customer>
+            <dns_sales>
+                <enable>1</enable>
+            </dns_sales>
+        </giantgiant_advanced_email_validation>
+    </default>
+</config>

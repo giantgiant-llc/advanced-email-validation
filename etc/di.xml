@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Customer\Api\CustomerRepositoryInterface">
+        <plugin
+                name="GiantGiantLLC_AdvancedEmailValidation::validate_customer_email_domain"
+                type="GiantGiantLLC\AdvancedEmailValidation\Plugin\ValidateCustomerEmail"
+        />
+    </type>
+    <type name="Magento\Checkout\Api\GuestPaymentInformationManagementInterface">
+        <plugin
+            name="GiantGiantLLC_AdvancedEmailValidation::validate_guest_email_api"
+            type="GiantGiantLLC\AdvancedEmailValidation\Plugin\ValidateGuestEmailViaApi"
+        />
+    </type>
+</config>

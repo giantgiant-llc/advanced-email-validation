@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="giantgiant" sortOrder="990" translate="label">
+            <label>GiantGiant</label>
+        </tab>
+        <section id="giantgiant_advanced_email_validation" translate="label" sortOrder="999999" showInDefault="1" showInWebsite="0" showInStore="0">
+            <class>separator-top</class>
+            <label>Advanced Email Validation</label>
+            <tab>giantgiant</tab>
+            <resource>GiantGiantLLC_AdvancedEmailValidation::config_validation</resource>
+            <group id="dns_domain" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Domains</label>
+                <field id="enable" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Email Domain Blocking</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="domains_to_block" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Domains to block (Registration, Sales)</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Email address domains to block, comma separated. (example.com,test.net)</comment>
+                </field>
+            </group>
+            <group id="dns_customer" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Customer Registration</label>
+                <field id="enable" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Advanced Email Validation on Registration</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="dns_sales" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Sales</label>
+                <field id="enable" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Advanced Email Validation on Guest Sales API</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
