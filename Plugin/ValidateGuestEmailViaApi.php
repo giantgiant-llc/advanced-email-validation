@@ -49,7 +49,7 @@ class ValidateGuestEmailViaApi
         \Magento\Quote\Api\Data\AddressInterface $billingAddress = null
     )
     {
-    	if (!$this->validationHelper->getRegistrationCheck()) {
+    	if (!$this->validationHelper->getGuestApiIsEnabled()) {
             return;
         }
         
