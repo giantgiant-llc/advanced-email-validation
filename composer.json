@@ -1,0 +1,12 @@
+{
+    "name": "giantgiant-llc/advanced-email-validation",
+    "description": "Adding extra email validation to customer registration and order creation",
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "autoload": {
+        "files": [ "registration.php" ],
+        "psr-4": {
+            "GiantGiantLLC\\AdvancedEmailValidation\\": ""
+        }
+    }
+}
